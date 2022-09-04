@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sort menu for arist channel
 // @namespace    https://github.com/adeleine1412
-// @version      4
+// @version      1.5
 // @description  add the sort menu to artist channels, as it is hidden from them
 // @author       adeleine
 // @match        https://www.youtube.com/*
@@ -34,7 +34,6 @@
       let html = document.createElement('div');
       html.innerHTML = GM_getResourceText("html");
       sort_menu.appendChild(html);
-      console.log(html);
 
       // click event to hide dropdown when clicking outside of it
       window.addEventListener('click', function(e) {
@@ -52,7 +51,7 @@
 
   // fallback update for very specific ajax behaviour
   setInterval(function() {
-    AppendSortMenu();
+    if (document.querySelector('#sort-menu') != null) AppendSortMenu();
   }, 1000);
  
 
