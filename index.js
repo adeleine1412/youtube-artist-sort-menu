@@ -10,7 +10,7 @@
 // @updateURL    https://github.com/adeleine1412/youtube-artist-sort-menu/raw/master/index.js
 // @downloadURL  https://github.com/adeleine1412/youtube-artist-sort-menu/raw/master/index.js
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
-// @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
+// @require      https://greasyfork.org/scripts/383527-wait-for-key-elements/code/Wait_for_key_elements.js
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
