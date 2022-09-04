@@ -29,7 +29,12 @@
       sort_menu.appendChild(html);
       console.log(html);
 
+      window.addEventListener('click', function(e) {
+        document.querySelector('.adeleine-sort-menu-wrapper>.dropdown').classList.remove('active');
+      });
+
       document.querySelector('.adeleine-sort-menu').addEventListener('click', function(e) {
+        e.stopPropagation();
         document.querySelector('.adeleine-sort-menu-wrapper>.dropdown').classList.toggle('active');
       });
     }
