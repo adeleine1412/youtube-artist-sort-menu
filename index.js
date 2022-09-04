@@ -4,9 +4,9 @@
 // @version      0.1
 // @description  add the sort menu to artist channels, as it is hidden from them
 // @author       adeleine
-// @match        https://www.youtube.com/*
-// @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
-// @resource     IMPORT_CSS https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/css/style.min.css
+// @match        https://www.youtube.com/c/*
+// @resource     css https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/css/style.min.css
+// @resource     html https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/index.html
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -14,18 +14,31 @@
 (function() {
   'use strict';
 
-  waitForKeyElements("#sort-menu", AppendSortMenu);
+  GM_addStyle(GM_getResourceText("css"));
+
+  runWhenReady("#sort-menu", AppendSortMenu);
 
   function AppendSortMenu() {
     let sort_menu = document.querySelector('#sort-menu');
-    let html = document.createElement('div');
-    html.innerHTML = '\
-    <a class="adeleine-sort-menu">\
-      Sort by\
-    </a>\
-    '
+    sort_menu.appendChild(GM_getResourceText("html"));
+  }
 
-    if (sort_menu.innerHTML = "") sort_menu.appendChild(html);
+  function runWhenReady(readySelector, callback) {
+    var numAttempts = 0;
+    var tryNow = function() {
+        var elem = document.querySelector(readySelector);
+        if (elem) {
+            callback(elem);
+        } else {
+            numAttempts++;
+            if (numAttempts >= 34) {
+                console.warn('Giving up after 34 attempts. Could not find: ' + readySelector);
+            } else {
+                setTimeout(tryNow, 250 * Math.pow(1.1, numAttempts));
+            }
+        }
+    };
+    tryNow();
   }
 
 })();
