@@ -6,7 +6,7 @@
 // @author       adeleine
 // @match        https://www.youtube.com/c/*
 // @resource     css https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/css/style.min.css
-// @resource     html https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/index.html
+// @resource     html https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/html/sort-menu.html
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -20,7 +20,10 @@
 
   function AppendSortMenu() {
     let sort_menu = document.querySelector('#sort-menu');
-    sort_menu.appendChild(GM_getResourceText("html"));
+    let html = document.createElement('div');
+    html.innerHTML = GM_getResourceText("html");
+    sort_menu.appendChild(html);
+    console.log(html);
   }
 
   function runWhenReady(readySelector, callback) {
