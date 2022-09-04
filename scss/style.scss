@@ -18,10 +18,10 @@
     list-style-type: none;
     white-space: nowrap;
     position: absolute;
+    bottom: -15px;
     width: auto;
     z-index: 2;
     opacity: 0;
-    bottom: 0;
     right: 0;
 
     &:not(.active) {
