@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sort menu for arist channel
 // @namespace    https://github.com/adeleine1412
-// @version      2
+// @version      3
 // @description  add the sort menu to artist channels, as it is hidden from them
 // @author       adeleine
 // @match        https://www.youtube.com/*
