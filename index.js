@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Sort menu for arist channel
 // @namespace    https://github.com/adeleine1412
-// @version      0.1
+// @version      1
 // @description  add the sort menu to artist channels, as it is hidden from them
 // @author       adeleine
 // @match        https://www.youtube.com/c/*
 // @resource     css https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/css/style.min.css
 // @resource     html https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/html/sort-menu.html
+// @updateURL    https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/index.js
+// @downloadURL  https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/index.js
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
