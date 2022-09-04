@@ -7,7 +7,7 @@
 // @match        https://www.youtube.com/*
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
-// @resource     IMPORT_CSS https://github.com/adeleine1412/
+// @resource     IMPORT_CSS https://raw.githubusercontent.com/adeleine1412/youtube-artist-sort-menu/master/css/style.min.css
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
