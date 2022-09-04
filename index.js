@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sort menu for arist channel
 // @namespace    https://github.com/adeleine1412
-// @version      3
+// @version      4
 // @description  add the sort menu to artist channels, as it is hidden from them
 // @author       adeleine
 // @match        https://www.youtube.com/*
@@ -18,26 +18,42 @@
 (function() {
   'use strict';
 
+  // load latest styles from the github repo
   GM_addStyle(GM_getResourceText("css"));
+
+  // use waitForKeyElements to wait for element to be loaded, works (mostly) with ajax too
   waitForKeyElements("#sort-menu", AppendSortMenu);
 
   function AppendSortMenu() {
+
+    // skip if it has the default sort-menu (non-artist channels)
     if (document.querySelector('#sort-menu').innerHTML == "") {
+
+      // create new element and append html code from the github rebo
       let sort_menu = document.querySelector('#sort-menu');
       let html = document.createElement('div');
       html.innerHTML = GM_getResourceText("html");
       sort_menu.appendChild(html);
       console.log(html);
 
+      // click event to hide dropdown when clicking outside of it
       window.addEventListener('click', function(e) {
         document.querySelector('.adeleine-sort-menu-wrapper>.dropdown').classList.remove('active');
       });
 
+      // show the dropdown and stop propagation to the event above
       document.querySelector('.adeleine-sort-menu').addEventListener('click', function(e) {
         e.stopPropagation();
         document.querySelector('.adeleine-sort-menu-wrapper>.dropdown').classList.toggle('active');
       });
     }
+
   }
+
+  // fallback update for very specific ajax behaviour
+  setInterval(function() {
+    AppendSortMenu();
+  }, 1000);
+ 
 
 })();
