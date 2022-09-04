@@ -24,6 +24,11 @@
     html.innerHTML = GM_getResourceText("html");
     sort_menu.appendChild(html);
     console.log(html);
+
+    document.querySelector('.adeleine-sort-menu').addEventListener('click', function(e) {
+      document.querySelector('.adeleine-sort-menu-wrapper>.dropdown').classList.toggle('active');
+    });
+    
   }
 
   function runWhenReady(readySelector, callback) {

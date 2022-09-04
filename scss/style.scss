@@ -1,6 +1,54 @@
-.adeleine-sort-menu {
-  color: var(--yt-spec-text-primary);
-  text-transform: uppercase;
+.adeleine-sort-menu-wrapper {
+  position: relative;
 
+  .adeleine-sort-menu{
+    letter-spacing: var(--ytd-tab-system-letter-spacing);
+    text-transform: var(--ytd-tab-system-text-transform);
+    font-size: var(--ytd-tab-system-font-size);
+    font-weight: var(--ytd-tab-system-font-weight);
+    color: var(--yt-spec-text-primary);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
 
+  .dropdown {
+    background-color: var(--yt-spec-brand-background-primary);
+    transform: translate(0%,100%);
+    transition: opacity 0.3s;
+    list-style-type: none;
+    white-space: nowrap;
+    position: absolute;
+    width: auto;
+    z-index: 2;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+
+    &:not(.active) {
+      pointer-events: none;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+
+    a {
+      color: var(--ytd-user-comment-color,var(--yt-spec-text-primary));
+      letter-spacing: var(--ytd-user-comment-letter-spacing);
+      font-weight: var(--ytd-user-comment-font-weight);
+      line-height: var(--ytd-user-comment-line-height);
+      font-family: var(--ytd-user-comment-font-family);
+      font-size: var(--ytd-user-comment-font-size);
+      transition: background-color 0.3s;
+      background-color: transparent;
+      text-decoration: none;
+      padding: 16px 20px;
+      font-size: 14px;
+      display: block;
+
+      &:hover {
+        background-color: var(--yt-spec-10-percent-layer);
+      }
+    }
+  }
 }
