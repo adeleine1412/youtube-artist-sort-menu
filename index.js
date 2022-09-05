@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sort menu for arist channels on YouTube
 // @namespace    https://github.com/adeleine1412
-// @version      1.6
+// @version      1.7
 // @description  add the sort menu to artist channels, as it is hidden from them
 // @author       adeleine
 // @match        https://www.youtube.com/*
@@ -10,7 +10,7 @@
 // @resource     html https://github.com/adeleine1412/youtube-artist-sort-menu/raw/master/html/sort-menu.html
 // @updateURL    https://github.com/adeleine1412/youtube-artist-sort-menu/raw/master/index.js
 // @downloadURL  https://github.com/adeleine1412/youtube-artist-sort-menu/raw/master/index.js
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
+// @require      https://code.jquery.com/jquery-3.6.1.min.js
 // @require      https://greasyfork.org/scripts/383527-wait-for-key-elements/code/Wait_for_key_elements.js
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
