@@ -17,7 +17,9 @@
     transition: opacity 0.3s;
     list-style-type: none;
     white-space: nowrap;
+    border-radius: 12px;
     position: absolute;
+    overflow: hidden;
     bottom: -15px;
     width: auto;
     z-index: 2;
