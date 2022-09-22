@@ -20,7 +20,7 @@
   // Load latest styles from the repository
   GM_addStyle(GM_getResourceText("css"));
 
-  // Note selction and observer options
+  // Node selction and observer options
   const targetNode = document.querySelector('body');
   const config = { attributes: true, childList: true, subtree: true };
 
@@ -36,12 +36,12 @@
         html.innerHTML = GM_getResourceText("html");
         sort_menu.appendChild(html);
 
-        // Click event to hide dropdown when clicking outside of it
+        // Hide dropdown when clicking outside of it
         window.addEventListener('click', function (e) {
           document.querySelector('.adeleine-sort-menu-wrapper>.dropdown').classList.remove('active');
         });
 
-        // Show the dropdown and stop propagation to the event above
+        // Show dropdown and stop propagation to the dropdown clicking-outside event
         document.querySelector('.adeleine-sort-menu').addEventListener('click', function (e) {
           e.stopPropagation();
           document.querySelector('.adeleine-sort-menu-wrapper>.dropdown').classList.toggle('active');
