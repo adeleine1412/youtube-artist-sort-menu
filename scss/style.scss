@@ -3,12 +3,19 @@
 
   .adeleine-sort-menu{
     letter-spacing: var(--ytd-tab-system-letter-spacing);
-    text-transform: var(--ytd-tab-system-text-transform);
-    font-size: var(--ytd-tab-system-font-size);
     font-weight: var(--ytd-tab-system-font-weight);
+    font-size: var(--ytd-tab-system-font-size);
     color: var(--yt-spec-text-primary);
-    text-transform: uppercase;
+    align-items: center;
     cursor: pointer;
+    display: flex;
+    gap: 8px;
+
+    svg {
+      fill: var(--yt-spec-text-primary);
+      height: 24px;
+      width: auto;
+    }
   }
 
   .dropdown {
